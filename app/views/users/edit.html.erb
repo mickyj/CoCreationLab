@@ -1,0 +1,18 @@
+
+<div class="signup">
+  <h1>Edit your profile </h1>
+  <div class="jumbotron">
+    <%= simple_form_for @user, :html => {:multipart => true, :class => 'form-horizontal' } do |f| %>
+    <%= f.input :image %>
+    <%= f.association :team, collection: Team.all, :as => :radio_buttons  %>
+    <%= f.label :major %><br />
+    <%= f.radio_button :major, 'MSE' %> MSE
+    <%= f.radio_button :major, 'MBA' %> MBA
+    <%= f.radio_button :major, 'MIM' %> MIM
+    <%= f.radio_button :major, 'MFIN' %> MFIN
+    <%= f.button :submit, class:"btn-primary" %>
+    <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+<% end %>
+</div>
+</div>
+

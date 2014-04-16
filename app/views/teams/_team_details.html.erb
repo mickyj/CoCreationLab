@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1><%= @team.name %></h1></div>
+  <div class="panel-body">
+    <p><%=@team.bio %></p>
+  </div>
+  <!-- Table -->
+
+  <div class="row">
+  <div class="col-xs-4">
+  <h3 class="mentor_name">The Mentor</h3>
+
+    <%= image_tag @team.image_url.to_s if @team.image_url.present? %></img>
+
+  </div>
+
+  <div class="col-xs-8">
+    <div class="bio">
+      <h4 class>Name</h4><h5 class="mentor_name"><%= @team.mentor %></h5>
+      <h4>Profession</h4><h5 class="mentor_name"><%= @team.profession %></h5>
+      <h4>Specialties</h4><h5 class="mentor_name"><%= @team.specialties %></h5>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+

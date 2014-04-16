@@ -1,0 +1,41 @@
+
+<div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">CoCreation Lab</a>
+            </div>
+
+              <ul class="nav navbar-nav">
+                <!-- <li class="active"><a href="/">Home</a></li> -->
+                <li><%= link_to "Teams", teams_path %></li>
+                <li><a href="about">About us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+
+                   <% if current_user %>
+                      <li><%= link_to "My_Profile", yourteam_path(current_user.name)%>
+                      <li class="login_name">Logged in as <%= current_user.name %></li>
+                      <li><%= link_to "Log out",  logout_path, class: "login-logout-link"%></li>
+                    <% else %>
+                      <li><%= link_to "Sign up", signup_path %></li>
+                      <li><%= link_to "Log in", login_path %></li>
+                    <% end %>
+                </ul>
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+

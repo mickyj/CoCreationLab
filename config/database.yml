@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: CoCreation_development
+  pool: 5
+  host: localhost
+  username: mikejarrell
+  password:
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: CoCreation_test
+  pool: 5
+  host: localhost
+  username: mikejarrell
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: CoCreation_production
+  pool: 5
+  host: localhost
+  username: mikejarrell
+  password:

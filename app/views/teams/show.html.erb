@@ -1,0 +1,57 @@
+
+<%#= link_to 'Team Profile', teams_path(@team_name) %>
+<div class="page-header">
+  <div class="profile">
+    <h1><%= current_user.first_name + ' ' + current_user.last_name %>  </h1>
+  <%= image_tag current_user.image_url(:profile).to_s,  class: "img-profile" %>
+    <h2> <%= current_user.major %> </h2>
+
+</div>
+</div>
+
+<%= render partial:  "team_details", locals: { team: @team} %>
+
+<h3 class="team_name">The Team</h3>
+  <table class="table">
+  <thead>
+
+    <tr>
+      <th></th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Major</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @team.users.each do |user| %>
+      <%= render partial: 'user_details', locals: {user: user} %>
+    <% end %>
+    </table>
+    </div>
+
+  <div class="uploads">
+  <h1>Uploads</h1>
+  <button id="button" class="dropbox-dropin-btn dropbox-dropin-default"></button>
+
+  <h2>Submit all your work for the lab here!</h2>
+
+`<input type="dropbox-chooser" name="selected-file" id="db-chooser"/>
+
+  <script type="text/javascript">
+    // add an event listener to a Chooser button
+    document.getElementById("db-chooser").addEventListener("DbxChooserSuccess",
+        function(e) {
+            alert("Here's the chosen file: " + e.files[0].link)
+        }, false);
+</script>
+  <%#= simple_form_for current_user, :html => {:multipart => true}  do |f| %>
+    <%#= f.file_format :image, :label => 'Slides - Version 1' %>
+    <%#= f.simple_fields_for :image do |f| %>
+    <%#= f.input :image, as: :file %>
+    <%#= f.button :submit, class:"btn-primary" %>
+  <%# end %>
+ <%# end %>
+
+
+</div>
+
